@@ -3,11 +3,13 @@
 #include <stdlib.h>
 #include <time.h>
   
-// Function to randomly generates password
-// of length N
+/**
+ * Function to randomly generates password
+ *Return: 0 if success
+ */
 void randomPasswordGeneration(int N)
 {
-    // Initialize counter
+    
     int i = 0;
   
     int randomizer = 0;
