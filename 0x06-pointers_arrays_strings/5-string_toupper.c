@@ -8,17 +8,17 @@
  *
  * Return: Lowercase changed to uppercase of the string
  */
-char *string_toupper(char *s)
+char *string_toupper(char *hi)
 {
+	int index = 0;
+	int desp = 'a' - 'A';
 
-	int i;
-
-	i = 0;
-	while (*(s + i))
+	for (index = 0; hi[index] != '\0'; ++index)
 	{
-		if (*(s + i) >= 'a' && *(s + i) <= 'z')
-			*(s + i) -= 'a' - 'A';
-		i++;
+		if (hi[index] >= 'a' && hi[index] <= 'z')
+		{
+			hi[index] = hi[index] - desp;
+		}
 	}
-	return (s);
+	return (hi);
 }
