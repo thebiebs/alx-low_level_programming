@@ -8,22 +8,24 @@
  * Return: String converted to rot13
  *
  */
-char *rot13(char *s)
+char *rot13(char *hi)
 {
-	int i, j;
-	char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char b[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int index, count;
 
-	for (i = 0; *(s + i); i++)
+	char minus[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char mayus[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (index = 0; hi[index] != '\0'; ++index)
 	{
-		for (j = 0; j < 52; j++)
+		for (count = 0; minus[count] != '\0' ; count++)
 		{
-			if (a[j] == *(s + i))
+			if (hi[index] == minus[count])
 			{
-				*(s + i) = b[j];
+				hi[index] = mayus[count];
 				break;
 			}
 		}
 	}
-	return (s);
+	hi[index] = '\0';
+	return (hi);
 }
